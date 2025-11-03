@@ -51,6 +51,17 @@ app.get('/events', async(req,res)=>{
     }
 });
 
+const authRoute = require('./routes/auth.route');
+app.use('/auth', authRoute);
+
+
+const eventRoute = require('./routes/event.route');
+app.use('/events', eventRoute);
+
+const userRoute = require('./routes/user.route');
+app.use('/user', userRoute);
+
+
 app.get('/', (req, res) => {
     // res.send('Hello, World!');
 res.send("<p>Welcome to the Express server.</p>");
